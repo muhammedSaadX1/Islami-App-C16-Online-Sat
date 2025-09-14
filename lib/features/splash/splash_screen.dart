@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app_online_sat/core/prefs_manager/prefs_manager.dart';
 import 'package:islami_app_online_sat/core/resources/assets_manager.dart';
 import 'package:islami_app_online_sat/core/resources/colors_manager.dart';
 import 'package:islami_app_online_sat/core/routes_manager/routes_manager.dart';
@@ -11,26 +12,23 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
-
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     navigate();
   }
 
-  void navigate(){
-    Future.delayed(Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, RoutesManager.mainLayout);
-    });
-
+  void navigate() async {
+    await Future.delayed(Duration(seconds: 2));
+    bool isFisrtLunch = await PrefsManager.firstLunch();
+    Navigator.pushReplacementNamed(
+      context,
+      isFisrtLunch ? RoutesManager.onboarding : RoutesManager.mainLayout,
+    );
   }
-
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: ColorsManager.black,
       body: Center(

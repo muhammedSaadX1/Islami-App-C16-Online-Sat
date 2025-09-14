@@ -11,6 +11,15 @@ abstract class ImageAssets {
   static const String hadithTabBg = "$base/hadith_tab_bg.png";
   static const String hadithCardBgImage = "$base/hadith_card_bg_image.png";
   static const String hadithCardBottomImage = "$base/hadith_card_bottom_image.png";
+  static const String onboardingImage1 = "$base/onboarding_image1.png";
+  static const String onboardingImage2 = "$base/onboarding_image2.png";
+  static const String onboardingImage3 = "$base/onboarding_image3.png";
+  static const String onboardingImage4 = "$base/onboarding_image4.png";
+  static const String onboardingImage5 = "$base/onboarding_image5.png";
+
+
+
+
 }
 
 abstract class IconAssets {
